@@ -1,0 +1,19 @@
+import React, { Component } from 'react';
+import { createDrawerNavigator } from 'react-navigation-drawer';
+import SideDrawer from './SideDrawer';
+import { AppTabNavigator } from './AppTabNavigator';
+import SettingScreen from '../screens/SettingScreen';
+
+export const AppDrawerNavigator = createDrawerNavigator({
+    Home: {
+        screen: AppTabNavigator,
+    },
+    Settings: {
+        screen: SettingScreen,
+    },
+},
+    { contentComponent: SideDrawer },
+    {
+        initialRouteName: "Home"
+    }
+)
